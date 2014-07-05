@@ -1,13 +1,12 @@
-Package: prenoms
+Package: firstNamesBe
 Type: Package
 Title: What the package does (short line)
 Version: 1.0
 Date: 2014-07-05
-Author: Who wrote it
-Maintainer: Who to complain to <yourfault@somewhere.net>
+Author: Nassim Haddad
+Maintainer: Nassim Haddad <nassim.hd@gmail.com>
 Description: More about what it does (maybe more than one line)
-License: What license is it under?
+License: MIT
 Depends:
     utils,
-    reshape2,
     plyr

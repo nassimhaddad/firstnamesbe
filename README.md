@@ -1,1 +1,3 @@
-prenoms - a package to analyze belgian first names
+# firstNamesBe
+## an R package to analyze belgian first names
+

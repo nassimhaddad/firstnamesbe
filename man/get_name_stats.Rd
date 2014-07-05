@@ -6,13 +6,13 @@ to get stats about a single firstName}
 get_name_stats(firstName, gender = TRUE, region = TRUE, ageRange = TRUE)
 }
 \arguments{
-  \item{firstName}{}
+  \item{firstName}{a first name}
 
-  \item{gender}{}
+  \item{gender}{(optional) the gender, if known}
 
-  \item{region}{}
+  \item{region}{(optional) the region, if known}
 
-  \item{ageRange}{}
+  \item{ageRange}{(optional) the ageRange, if known}
 }
 \value{
 singe line data frame with statistics about the first name

@@ -2,10 +2,10 @@
 #' internal function to the package
 #' to get stats about a single firstName
 #' 
-#' @param firstName
-#' @param gender
-#' @param region
-#' @param ageRange
+#' @param firstName a first name
+#' @param gender (optional) the gender, if known
+#' @param region (optional) the region, if known
+#' @param ageRange (optional) the ageRange, if known
 #' @return 
 #' singe line data frame with statistics about the first name
 #' @examples
@@ -20,9 +20,14 @@ get_name_stats <- function(firstName,
                            gender = TRUE,
                            region = TRUE,
                            ageRange = TRUE){
-  temp <- dataArray[firstName,gender,region,ageRange, drop=FALSE]
   
+  temp <- tryCatch({dataArray[firstName,gender,region,ageRange, drop=FALSE]},
+           error = function(e)return(data.frame(n=0)))
+
   n <- sum(temp)
+  if (n == 0){
+    return(data.frame(n=0))
+  }
   out <- c(apply(temp, 2, sum)/n,
            apply(temp, 3, sum)/n,
            apply(temp, 4, sum)/n,
@@ -44,15 +49,26 @@ get_name_stats <- function(firstName,
 #' data frame with statistics about the first names given
 #' @examples
 #' \dontrun{
+#' nameStats("Bart")
+#' 
+#' nameStats("Tintin") # no-one's called that way in 2013
+#' 
 #' nameStats(firstName = c("Jean", "Olivier", "Sabrina"))
+#' 
 #' nameStats(firstName = c("Jean", "Olivier", "Sabrina"),
-#' gender = c("male", "male", "female"))
+#'           gender = c("male", "male", "female"))
+#'           
+#' nameStats(firstName = c("Jean", "Olivier", "Sabrina"),
+#'           region = c("bruxelles", "bruxelles", "flandre"))
+#'           
+#' nameStats(firstName = c("Jean", "Olivier", "Sabrina"),
+#'           ageRange = c("18to64", "18to64", "18to64"))
+#' 
 #'  })
 nameStats <- function(firstName, 
                       gender = TRUE,
                       region = TRUE,
                       ageRange = TRUE){
-  require(plyr)
   results_list <- mapply(get_name_stats, 
                          firstName = firstName,
                          gender = gender,

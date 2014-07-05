@@ -25,9 +25,21 @@ get stats about a first names main function of the package
 }
 \examples{
 \dontrun{
+nameStats("Bart")
+
+nameStats("Tintin") # no-one's called that way in 2013
+
 nameStats(firstName = c("Jean", "Olivier", "Sabrina"))
+
 nameStats(firstName = c("Jean", "Olivier", "Sabrina"),
-gender = c("male", "male", "female"))
+          gender = c("male", "male", "female"))
+
+nameStats(firstName = c("Jean", "Olivier", "Sabrina"),
+          region = c("bruxelles", "bruxelles", "flandre"))
+
+nameStats(firstName = c("Jean", "Olivier", "Sabrina"),
+          ageRange = c("18to64", "18to64", "18to64"))
+
  })
 }
 
