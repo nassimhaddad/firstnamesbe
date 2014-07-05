@@ -1,11 +1,10 @@
 Package: firstNamesBe
 Type: Package
-Title: What the package does (short line)
+Title: an R package to analyze belgian first names
 Version: 1.0
 Date: 2014-07-05
 Author: Nassim Haddad
 Maintainer: Nassim Haddad <nassim.hd@gmail.com>
-Description: More about what it does (maybe more than one line)
 License: MIT
 Depends:
     utils,

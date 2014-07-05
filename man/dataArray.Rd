@@ -12,7 +12,7 @@ in 2012).
 }
 \examples{
 \dontrun{
-data(prenomsBe2013)
+data(dataArray)
 str(dataArray)
 }
 }
