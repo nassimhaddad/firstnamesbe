@@ -91,5 +91,9 @@ nameStats <- function(firstName,
   df[is.na(df)]<-0
   out <- data.frame(firstName = firstNameInput,
                     df)
+  
+  out[out$n==0, c("male", "female", "bruxelles", "flandre", "wallonie", 
+                  "below18", "X18to64", "above64")]<-NA
+  
   out
 }
