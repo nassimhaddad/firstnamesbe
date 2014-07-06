@@ -6,7 +6,7 @@ to get stats about a single firstName}
 get_name_stats(firstName, gender = TRUE, region = TRUE, ageRange = TRUE)
 }
 \arguments{
-  \item{firstName}{a first name}
+  \item{firstName}{a first name in non-capital letters}
 
   \item{gender}{(optional) the gender, if known}
 
@@ -23,11 +23,11 @@ single firstName
 }
 \examples{
 \dontrun{
-get_name_stats("Jean")
-get_name_stats("Jean", gender="male")
-get_name_stats("Sabrina", gender="female")
-get_name_stats("Jean", gender="male", region="bruxelles")
-get_name_stats("Jean", gender="male", region="bruxelles", ageRange="above64")
+get_name_stats("jean")
+get_name_stats("jean", gender="male")
+get_name_stats("sabrina", gender="female")
+get_name_stats("jean", gender="male", region="bruxelles")
+get_name_stats("jean", gender="male", region="bruxelles", ageRange="above64")
  })
 }
 

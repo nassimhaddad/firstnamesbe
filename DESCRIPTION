@@ -5,7 +5,11 @@ Version: 1.0
 Date: 2014-07-05
 Author: Nassim Haddad
 Maintainer: Nassim Haddad <nassim.hd@gmail.com>
+Description: This package contains function to get stats based on first names
+    as an input. It is based on a dataset of the first names of (almost) all
+    the people living in Belgium in 2013.
 License: MIT
+URL: http://github.com/nassimhaddad/firstnamesbe
 Depends:
     utils,
     plyr

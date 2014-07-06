@@ -1,8 +1,4 @@
-# .onLoad <- function(libname, pkgname) {
-#   data("prenomsBe2013", package=pkgname, envir=parent.env(environment()))
-# }
-
-data(dataArray, envir=environment())
+data(sysdata, envir=environment())
 
 #' Belgian First Names Count of 2013
 #' 

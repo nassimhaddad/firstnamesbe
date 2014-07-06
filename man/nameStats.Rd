@@ -6,7 +6,8 @@ main function of the package}
 nameStats(firstName, gender = TRUE, region = TRUE, ageRange = TRUE)
 }
 \arguments{
-  \item{firstName}{a vector of first names}
+  \item{firstName}{a vector of first names, the case
+  doesn't matter}
 
   \item{gender}{(optional) a vector of genders, TRUE means
   all genders}
@@ -16,6 +17,8 @@ nameStats(firstName, gender = TRUE, region = TRUE, ageRange = TRUE)
 
   \item{ageRange}{(optional) a vector of age ranges, TRUE
   means all age ranges}
+
+  \item{ignore.case}{(optional) whether to ignore the case}
 }
 \value{
 data frame with statistics about the first names given

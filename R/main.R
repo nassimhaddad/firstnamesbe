@@ -2,7 +2,7 @@
 #' internal function to the package
 #' to get stats about a single firstName
 #' 
-#' @param firstName a first name
+#' @param firstName a first name in non-capital letters
 #' @param gender (optional) the gender, if known
 #' @param region (optional) the region, if known
 #' @param ageRange (optional) the ageRange, if known
@@ -10,18 +10,18 @@
 #' singe line data frame with statistics about the first name
 #' @examples
 #' \dontrun{
-#' get_name_stats("Jean")
-#' get_name_stats("Jean", gender="male")
-#' get_name_stats("Sabrina", gender="female")
-#' get_name_stats("Jean", gender="male", region="bruxelles")
-#' get_name_stats("Jean", gender="male", region="bruxelles", ageRange="above64")
+#' get_name_stats("jean")
+#' get_name_stats("jean", gender="male")
+#' get_name_stats("sabrina", gender="female")
+#' get_name_stats("jean", gender="male", region="bruxelles")
+#' get_name_stats("jean", gender="male", region="bruxelles", ageRange="above64")
 #'  })
 get_name_stats <- function(firstName, 
                            gender = TRUE,
                            region = TRUE,
                            ageRange = TRUE){
   
-  temp <- tryCatch({dataArray[firstName,gender,region,ageRange, drop=FALSE]},
+  temp <- tryCatch({dataArrayLower[firstName,gender,region,ageRange, drop=FALSE]},
            error = function(e)return(data.frame(n=0)))
 
   n <- sum(temp)
@@ -40,10 +40,11 @@ get_name_stats <- function(firstName,
 #' get stats about a first names
 #' main function of the package
 #' 
-#' @param firstName a vector of first names
+#' @param firstName a vector of first names, the case doesn't matter
 #' @param gender (optional) a vector of genders, TRUE means all genders
 #' @param region (optional) a vector of regions, TRUE means all regions
 #' @param ageRange (optional) a vector of age ranges, TRUE means all age ranges
+#' @param ignore.case (optional) whether to ignore the case
 #' @export
 #' @return 
 #' data frame with statistics about the first names given
@@ -69,6 +70,9 @@ nameStats <- function(firstName,
                       gender = TRUE,
                       region = TRUE,
                       ageRange = TRUE){
+  firstNameInput <- firstName
+  firstName <- tolower(firstName)
+  
   results_list <- mapply(get_name_stats, 
                          firstName = firstName,
                          gender = gender,
@@ -85,6 +89,6 @@ nameStats <- function(firstName,
                              "above64", "n"), row.names = integer(0), class = "data.frame")
   df <- rbind.fill(df, out)
   df[is.na(df)]<-0
-  row.names(df)<-firstName
+  row.names(df)<-firstNameInput
   df
 }
