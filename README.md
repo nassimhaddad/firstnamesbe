@@ -1,5 +1,5 @@
 ## firstNamesBe
-### an R package to analyze belgian first names
+### an R package to analyze first names of the Belgian population
 
 This package contains function to get stats based on first names as an input. It is based on a dataset of the first names of (almost) all the people living in Belgium in 2013. 
 
