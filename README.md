@@ -1,9 +1,10 @@
 ## firstNamesBe
+
 ### an R package to analyze first names of the Belgian population
 
-This package contains function to get stats based on first names as an input. It is based on a dataset of the first names of (almost) all the people living in Belgium in 2013. 
+This package contains function to get stats based on first names as an input. It is based on a [national statistics dataset](http://statbel.fgov.be/fr/modules/publications/statistiques/population/prenoms_de_la_population_totale.jsp) covering the first names of 10.573.205 people living in Belgium in 2013 (fyi the Belgian population was of 11.116.243 in 2012).
 
-For any given first name, the user gets the split by gender, region and age range. If the user knows any of those 3 dimensions, he can also input them and will get an output restricted to these values.
+For any given first name, the user gets the split by gender, region and age range. If the user knows any of those 3 dimensions, he can also input them and will get an output restricted to these values. 
 
 ### Getting started: 
 
