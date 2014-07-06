@@ -53,15 +53,15 @@ get_name_stats <- function(firstName,
 #' 
 #' nameStats("Tintin") # no-one's called that way in 2013
 #' 
-#' nameStats(firstName = c("Jean", "Olivier", "Sabrina"))
+#' nameStats(firstName = c("Alex", "Bart", "Clara"))
 #' 
-#' nameStats(firstName = c("Jean", "Olivier", "Sabrina"),
+#' nameStats(firstName = c("Alex", "Bart", "Clara"),
 #'           gender = c("male", "male", "female"))
 #'           
-#' nameStats(firstName = c("Jean", "Olivier", "Sabrina"),
+#' nameStats(firstName = c("Alex", "Bart", "Clara"),
 #'           region = c("bruxelles", "bruxelles", "flandre"))
 #'           
-#' nameStats(firstName = c("Jean", "Olivier", "Sabrina"),
+#' nameStats(firstName = c("Alex", "Bart", "Clara"),
 #'           ageRange = c("18to64", "18to64", "18to64"))
 #' 
 #'  })
@@ -85,5 +85,6 @@ nameStats <- function(firstName,
                              "above64", "n"), row.names = integer(0), class = "data.frame")
   df <- rbind.fill(df, out)
   df[is.na(df)]<-0
+  row.names(df)<-firstName
   df
 }
