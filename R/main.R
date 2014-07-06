@@ -89,6 +89,7 @@ nameStats <- function(firstName,
                              "above64", "n"), row.names = integer(0), class = "data.frame")
   df <- rbind.fill(df, out)
   df[is.na(df)]<-0
-  row.names(df)<-firstNameInput
-  df
+  out <- data.frame(firstName = firstNameInput,
+                    df)
+  out
 }
