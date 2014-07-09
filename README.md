@@ -11,7 +11,7 @@ For any given first name, the user gets the split by gender, region and age rang
 Install the library from github using `devtools`:
 
     library(devtools)
-    install_github(firstnamesbe, username="nassimhaddad")
+    install_github("firstnamesbe", username="nassimhaddad")
     library(firstNamesBe)
     help(nameStats)
 
