@@ -4,7 +4,9 @@
 
 This package contains function to get stats based on first names as an input. It is based on a [national statistics dataset](http://statbel.fgov.be/fr/modules/publications/statistiques/population/prenoms_de_la_population_totale.jsp) covering the first names of 10.573.205 people living in Belgium in 2013 (fyi the Belgian population was of 11.116.243 in 2012).
 
-For any given first name, the user gets the split by gender, region and age range. If the user knows any of those 3 dimensions, he can also input them and will get an output restricted to these values. 
+For any given first name, `namestats` returns the split by gender, region and age range, i.e. a named vector where `male` is the proportion of people with this first name that are males, `bruxelles` the proportion of people with this first name who live in brussels, etc.
+
+If you are only interested in the stats filtered on a given dimension (for instance the region), just give that as an additional input parameter.
 
 ### Getting started: 
 
